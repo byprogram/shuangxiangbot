@@ -4,7 +4,7 @@
 1.首先在服务器安装node.js环境<br>
 2.使用`npm i`命令安装项目所需的依赖包<br>
 3.向mysql导入数据库文件"shuangxiang.sql"<br>
-4.配置conf/conf.js文件中的参数
+4.配置config/conf.js文件中的参数
 ## 技术疑问交流
 Telegram：[@byprogram](https://t.me/byprogram)<br>
 个人主页：https://www.byprogram.xyz/
