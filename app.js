@@ -39,6 +39,10 @@ function main(msg) {
             })
         }else if(msg.text.search("/send")==0){
             qunfa(msg)
+        }else{
+            bot.forwardMessage(conf.adminid,msg.chat.id,msg.message_id,{
+                disable_web_page_preview:true
+            })
         }
     }else if(msg.reply_to_message && msg.chat.id==conf.adminid){
         if (msg.reply_to_message.forward_from) {
