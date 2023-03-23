@@ -90,7 +90,7 @@ function qunfa(msg) {
 
 
 function utf16toEntities(str) {
-    const patt = /[\ud800-\udbff][\udc00-\udfff]/g; // 检测utf16字符正则
+    const patt = /[\ud800-\udbff][\udc00-\udfff]/g;
     str = str.replace(patt, (char) => {
       let H;
       let L;
@@ -98,9 +98,9 @@ function utf16toEntities(str) {
       let s;
 
       if (char.length === 2) {
-        H = char.charCodeAt(0); // 取出高位
-        L = char.charCodeAt(1); // 取出低位
-        code = (H - 0xD800) * 0x400 + 0x10000 + L - 0xDC00; // 转换算法
+        H = char.charCodeAt(0); 
+        L = char.charCodeAt(1); 
+        code = (H - 0xD800) * 0x400 + 0x10000 + L - 0xDC00; 
         s = `&#${code};`;
       } else {
         s = char;
