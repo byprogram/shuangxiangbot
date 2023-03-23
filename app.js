@@ -32,21 +32,26 @@ bot.on('message', (msg) => {
 });
 
 function main(msg) {
-	if (msg.text=="/start") {
-        bot.sendMessage(msg.from.id,`<b>👏欢迎使用双向机器人</b>`,{
-            parse_mode:"HTML"
-        })
+    if (msg.text) {
+        if (msg.text=="/start") {
+            bot.sendMessage(msg.from.id,`<b>👏欢迎使用双向机器人</b>`,{
+                parse_mode:"HTML"
+            })
+        }else if(msg.text.search("/send")==0){
+            qunfa(msg)
+        }else{
+            bot.forwardMessage(conf.adminid,msg.chat.id,msg.message_id,{
+                disable_web_page_preview:true
+            })
+        }
     }else if(msg.reply_to_message && msg.chat.id==conf.adminid){
         if (msg.reply_to_message.forward_from) {
             bot.forwardMessage(msg.reply_to_message.forward_from.id,msg.chat.id,msg.message_id,{
+                disable_web_page_preview:true
             })
         }
-    }else if(msg.text.search("/send")==0){
-        qunfa(msg)
-    }else{
-        bot.forwardMessage(conf.adminid,msg.chat.id,msg.message_id,{
-        })
     }
+	
 }
 
 function qunfa(msg) {
