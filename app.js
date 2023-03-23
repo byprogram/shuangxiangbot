@@ -7,7 +7,7 @@ var bot = new TelegramBot(conf.token, {polling: true});
 /*创建实例对象结束*/
 
 /*监听新消息*/
-bot.on('text', (msg) => { 
+bot.on('message', (msg) => { 
     if (msg.chat.type=='private') {
         conf.pool.getConnection(function(err, connection) {
             if (err) throw err;
@@ -36,9 +36,11 @@ function main(msg) {
         bot.sendMessage(msg.from.id,`<b>👏欢迎使用双向机器人</b>`,{
             parse_mode:"HTML"
         })
-    }else if(msg.reply_to_message){
-        bot.sendMessage(msg.reply_to_message.forward_from.id,msg.text,{
-        })
+    }else if(msg.reply_to_message && msg.chat.id==conf.adminid){
+        if (msg.reply_to_message.forward_from) {
+            bot.forwardMessage(msg.reply_to_message.forward_from.id,msg.chat.id,msg.message_id,{
+            })
+        }
     }else if(msg.text.search("/send")==0){
         qunfa(msg)
     }else{
