@@ -8,8 +8,10 @@
 3.向mysql导入数据库文件"shuangxiang.sql"<br>
 4.配置config/conf.js文件中的参数
 ## 使用教程
-1.在机器人中回复转发的消息即可完成与其他用户聊天<br>
+1.在群组内回复转发的消息即可完成与其他用户聊天<br>
 2.使用命令`/send 群发内容`群发<br>
+3.使用命令`/ban` + 群内回复用户消息 可拉黑用户<br>
+4.使用命令`/unban` + 群内回复用户消息 可解除拉黑用户<br>
 ## 技术疑问交流
 Telegram：[@byprogram](https://t.me/byprogram)<br>
 个人主页：https://www.byprogram.xyz/
