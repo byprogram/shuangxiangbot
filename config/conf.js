@@ -6,6 +6,6 @@ module.exports = {
         password : 'shuangxiang', //mysql密码
         database : 'shuangxiang', //mysql数据库
     }),
-    token: '6189733286:AAHyRn0z3-ikYQTwyZubLBbAl2lYXUWY1VU', //机器人的token
-    adminid:"5197702141" //管理员id 或 管理群的id 使用机器人@qunid_bot获取id
+    token: '5935850388:AAHEssKugiFBhFDxbBP1hOtMq9S7Bm2X78c', //机器人的token
+    adminid:-1001971441758 //管理员id 或 管理群的id 使用机器人@qunid_bot获取id
 }
